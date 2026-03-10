@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru</title>
-    <meta name="description" content="Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
+    <title id="pageTitle">Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru</title>
+    <meta id="pageDesc" name="description" content="Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -376,6 +376,132 @@
             background: var(--accent-glow);
             color: var(--red-primary);
             border-color: var(--red-primary);
+        }
+
+        /* Location Selector */
+        .location-selector {
+            position: relative;
+        }
+
+        .location-selector-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .location-selector-btn:hover,
+        .location-selector-btn.active {
+            background: var(--accent-glow);
+            color: var(--red-primary);
+            border-color: var(--red-primary);
+        }
+
+        .location-selector-btn i {
+            color: var(--red-primary);
+        }
+
+        .location-selector-btn .chevron {
+            transition: transform 0.25s ease;
+            opacity: 0.6;
+        }
+
+        .location-selector-btn.active .chevron {
+            transform: rotate(180deg);
+        }
+
+        .location-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .location-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .location-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .location-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .location-dropdown-item:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .location-dropdown-item.selected {
+            background: var(--accent-glow);
+            color: var(--red-primary);
+            font-weight: 600;
+        }
+
+        .location-dropdown-item .loc-check {
+            margin-left: auto;
+            opacity: 0;
+            color: var(--red-primary);
+        }
+
+        .location-dropdown-item.selected .loc-check {
+            opacity: 1;
+        }
+
+        .location-dropdown-item .loc-city {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .location-dropdown-item .loc-city small {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            .location-selector-btn span.loc-name {
+                display: none;
+            }
+            .location-selector-btn {
+                padding: 6px 10px;
+            }
+            .location-dropdown {
+                right: -40px;
+            }
         }
 
         .nav-cta {
@@ -1940,6 +2066,27 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <div class="location-selector" id="locationSelector">
+                        <button class="location-selector-btn" id="locationBtn" onclick="toggleLocationDropdown()">
+                            <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
+                            <span class="loc-name" id="locationBtnText">Bengaluru</span>
+                            <i data-lucide="chevron-down" class="chevron" style="width:14px;height:14px;"></i>
+                        </button>
+                        <div class="location-dropdown" id="locationDropdown">
+                            <div class="location-dropdown-item selected" data-location="bangalore" onclick="switchLocation('bangalore')">
+                                <div class="loc-city">Bengaluru<small>Electronic City, Karnataka</small></div>
+                                <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
+                            </div>
+                            <div class="location-dropdown-item" data-location="hyderabad" onclick="switchLocation('hyderabad')">
+                                <div class="loc-city">Hyderabad<small>Banjara Hills, Telangana</small></div>
+                                <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
+                            </div>
+                            <div class="location-dropdown-item" data-location="delhi" onclick="switchLocation('delhi')">
+                                <div class="loc-city">Delhi<small>Dwarka, New Delhi</small></div>
+                                <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
+                            </div>
+                        </div>
+                    </div>
                     <button class="lang-switch" id="langSwitch" onclick="toggleLang()" title="Switch Language">
                         <span class="en">ಕನ</span>
                         <span class="kn">EN</span>
@@ -2020,8 +2167,8 @@
                     </div>
 
                     <p class="hero-desc">
-                        <span class="en">Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.</span>
-                        <span class="kn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
+                        <span class="en" data-loc="heroDesc">Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.</span>
+                        <span class="kn" data-loc="heroDescKn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
                     </p>
 
                     <div class="hero-stats">
@@ -2096,10 +2243,10 @@
                 <div class="info-item reveal stagger-1">
                     <div class="info-icon"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></div>
                     <div class="info-text">
-                        <strong class="en">Electronic City</strong>
-                        <strong class="kn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ</strong>
-                        <span class="en">Opp Cult Fit, Neeladri Road</span>
-                        <span class="kn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್</span>
+                        <strong class="en" data-loc="infoArea">Electronic City</strong>
+                        <strong class="kn" data-loc="infoAreaKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ</strong>
+                        <span class="en" data-loc="infoAddress">Opp Cult Fit, Neeladri Road</span>
+                        <span class="kn" data-loc="infoAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್</span>
                     </div>
                 </div>
                 <div class="info-item reveal stagger-2">
@@ -2413,7 +2560,7 @@
                             </div>
                         </div>
                         <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <div class="review-text en">Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.</div>
+                        <div class="review-text en" data-loc="review1">Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.</div>
                         <div class="review-text kn">ಅತ್ಯುತ್ತಮ ದಂತ ಆರೈಕೆ! ಡಾ. ಮಿಗ್ಲಾನಿ ತುಂಬಾ ವೃತ್ತಿಪರ ಮತ್ತು ಮೃದು. ಕ್ಲಿನಿಕ್ ಶುಚಿಯಾಗಿ, ಆಧುನಿಕವಾಗಿದೆ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸ್ನೇಹಪರ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಯಾರಿಗಾದರೂ ಹೆಚ್ಚು ಶಿಫಾರಸು ಮಾಡುತ್ತೇನೆ.</div>
                         <div class="review-source">Google Review</div>
                     </div>
@@ -2469,7 +2616,7 @@
                             </div>
                         </div>
                         <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <div class="review-text en">The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn't be happier with the results.</div>
+                        <div class="review-text en" data-loc="review5">The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn't be happier with the results.</div>
                         <div class="review-text kn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯ ಅತ್ಯುತ್ತಮ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್! ಆಧುನಿಕ ಉಪಕರಣಗಳು, ಶುಚಿಯಾದ ವಾತಾವರಣ ಮತ್ತು ತುಂಬಾ ಕಾಳಜಿಯುಳ್ಳ ತಂಡ.</div>
                         <div class="review-source">Google Review</div>
                     </div>
@@ -2638,8 +2785,8 @@
                         <div>
                             <h4 class="en">Clinic Address</h4>
                             <h4 class="kn">ಕ್ಲಿನಿಕ್ ವಿಳಾಸ</h4>
-                            <p class="en">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
-                            <p class="kn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
+                            <p class="en" data-loc="bookingAddress">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
+                            <p class="kn" data-loc="bookingAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
                         </div>
                     </div>
                     <div class="booking-info-card">
@@ -2670,14 +2817,14 @@
                     <span class="kn">ನಮ್ಮ ಕ್ಲಿನಿಕ್‌ಗೆ ಬನ್ನಿ</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="en">Conveniently located in Electronic City with easy access and parking.</span>
-                    <span class="kn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
+                    <span class="en" data-loc="locationSubtitle">Conveniently located in Electronic City with easy access and parking.</span>
+                    <span class="kn" data-loc="locationSubtitleKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
                 </p>
             </div>
 
             <div class="location-grid">
                 <div class="map-container reveal-left">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4!2d77.67!3d12.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUxJzAwLjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4!2d77.67!3d12.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUxJzAwLjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="location-details reveal-right">
                     <div class="location-card">
@@ -2685,10 +2832,10 @@
                         <div>
                             <h4 class="en">Address</h4>
                             <h4 class="kn">ವಿಳಾಸ</h4>
-                            <p class="en">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
-                            <p class="kn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
-                            <a href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="en" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">Get Directions <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
-                            <a href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="kn" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">ದಿಕ್ಕುಗಳನ್ನು ಪಡೆಯಿರಿ <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
+                            <p class="en" data-loc="locAddress">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
+                            <p class="kn" data-loc="locAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
+                            <a id="directionsLinkEn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="en" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">Get Directions <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
+                            <a id="directionsLinkKn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="kn" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">ದಿಕ್ಕುಗಳನ್ನು ಪಡೆಯಿರಿ <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
                         </div>
                     </div>
                     <div class="location-card">
@@ -2696,8 +2843,8 @@
                         <div>
                             <h4 class="en">Landmark</h4>
                             <h4 class="kn">ಗುರುತಿನ ಸ್ಥಳ</h4>
-                            <p class="en">Opposite Cult Fit, Near Electronic City Phase 1</p>
-                            <p class="kn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ</p>
+                            <p class="en" data-loc="locLandmark">Opposite Cult Fit, Near Electronic City Phase 1</p>
+                            <p class="kn" data-loc="locLandmarkKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -2705,7 +2852,7 @@
                         <div>
                             <h4 class="en">Plus Code</h4>
                             <h4 class="kn">ಪ್ಲಸ್ ಕೋಡ್</h4>
-                            <p>RJRW+P3 Electronic City, Bengaluru, Karnataka</p>
+                            <p data-loc="locPlusCode">RJRW+P3 Electronic City, Bengaluru, Karnataka</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -2754,9 +2901,9 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand-text">Dr. Miglani's Dental Clinic</div>
-                    <div class="footer-brand-sub">Narayana Health · Electronic City</div>
-                    <p class="footer-desc en">Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Part of the trusted Narayana Health network.</p>
-                    <p class="footer-desc kn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.</p>
+                    <div class="footer-brand-sub" data-loc="footerBrandSub">Narayana Health · Electronic City</div>
+                    <p class="footer-desc en" data-loc="footerDesc">Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Part of the trusted Narayana Health network.</p>
+                    <p class="footer-desc kn" data-loc="footerDescKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
                         <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
@@ -2792,8 +2939,8 @@
                     <h4 class="kn">ಸಂಪರ್ಕ ಮಾಹಿತಿ</h4>
                     <div class="footer-contact-item">
                         <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
-                        <span class="en">Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100</span>
-                        <span class="kn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</span>
+                        <span class="en" data-loc="footerAddress">Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100</span>
+                        <span class="kn" data-loc="footerAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</span>
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="phone" style="width:16px;height:16px;"></i>
@@ -2880,6 +3027,185 @@
 
         const savedLang = localStorage.getItem('lang') || 'en';
         document.documentElement.setAttribute('data-lang', savedLang);
+
+        // ===== LOCATION SWITCHER =====
+        const locationData = {
+            bangalore: {
+                city: 'Bengaluru',
+                area: 'Electronic City',
+                areaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
+                phone: '09761696000',
+                phoneDisplay: '097616 96000',
+                whatsapp: '919761696000',
+                nhPhone: '18003090309',
+                title: "Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru",
+                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Electronic City',
+                infoAreaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
+                infoAddress: 'Opp Cult Fit, Neeladri Road',
+                infoAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್',
+                bookingAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
+                bookingAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                locationSubtitle: 'Conveniently located in Electronic City with easy access and parking.',
+                locationSubtitleKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
+                locAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
+                locAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                locLandmark: 'Opposite Cult Fit, Near Electronic City Phase 1',
+                locLandmarkKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ',
+                locPlusCode: 'RJRW+P3 Electronic City, Bengaluru, Karnataka',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Electronic+City',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4!2d77.67!3d12.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUxJzAwLjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Narayana Health · Electronic City',
+                footerDesc: 'Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Part of the trusted Narayana Health network.',
+                footerDescKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
+                footerAddress: 'Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100',
+                footerAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.',
+                review5: 'The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+            },
+            hyderabad: {
+                city: 'Hyderabad',
+                area: 'Banjara Hills',
+                areaKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್',
+                phone: '09761696000',
+                phoneDisplay: '097616 96000',
+                whatsapp: '919761696000',
+                nhPhone: '18003090309',
+                title: "Dr. Miglani's Dental Clinic | Narayana Health - Banjara Hills, Hyderabad",
+                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Banjara Hills, Hyderabad. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Banjara Hills, Hyderabad — trusted by hundreds of families for comprehensive oral care.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Banjara Hills',
+                infoAreaKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್',
+                infoAddress: 'Road No. 3, Near GVK One Mall',
+                infoAddressKn: 'ರೋಡ್ ನಂ. 3, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ',
+                bookingAddress: 'Road No. 3, Banjara Hills, Near GVK One Mall, Hyderabad, Telangana 500034',
+                bookingAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
+                locationSubtitle: 'Conveniently located in Banjara Hills, Hyderabad with easy access and parking.',
+                locationSubtitleKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
+                locAddress: 'Road No. 3, Banjara Hills, Near GVK One Mall, Hyderabad, Telangana 500034',
+                locAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
+                locLandmark: 'Near GVK One Mall, Banjara Hills Road No. 3',
+                locLandmarkKn: 'GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಬಂಜಾರಾ ಹಿಲ್ಸ್ ರೋಡ್ ನಂ. 3',
+                locPlusCode: 'X3CG+QM Banjara Hills, Hyderabad, Telangana',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Banjara+Hills+Hyderabad',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0!2d78.44!3d17.41!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzM2LjAiTiA3OMKwMjYnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Narayana Health · Banjara Hills',
+                footerDesc: 'Providing expert dental care with a gentle touch in Banjara Hills, Hyderabad. Part of the trusted Narayana Health network.',
+                footerDescKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
+                footerAddress: 'Road No. 3, Banjara Hills, Hyderabad, Telangana 500034',
+                footerAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Banjara Hills.',
+                review5: 'The best dental clinic in Banjara Hills! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+            },
+            delhi: {
+                city: 'Delhi',
+                area: 'Dwarka',
+                areaKn: 'ದ್ವಾರಕಾ',
+                phone: '09761696000',
+                phoneDisplay: '097616 96000',
+                whatsapp: '919761696000',
+                nhPhone: '18003090309',
+                title: "Dr. Miglani's Dental Clinic | Narayana Health - Dwarka, New Delhi",
+                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Dwarka, New Delhi. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Dwarka, New Delhi — trusted by hundreds of families for comprehensive oral care.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Dwarka',
+                infoAreaKn: 'ದ್ವಾರಕಾ',
+                infoAddress: 'Sector 12, Near Dwarka Mor Metro',
+                infoAddressKn: 'ಸೆಕ್ಟರ್ 12, ದ್ವಾರಕಾ ಮೋರ್ ಮೆಟ್ರೋ ಹತ್ತಿರ',
+                bookingAddress: 'Plot No. 5, Sector 12, Dwarka, New Delhi 110075',
+                bookingAddressKn: 'ಪ್ಲಾಟ್ ನಂ. 5, ಸೆಕ್ಟರ್ 12, ದ್ವಾರಕಾ, ನವ ದೆಹಲಿ 110075',
+                locationSubtitle: 'Conveniently located in Dwarka, New Delhi with metro connectivity and parking.',
+                locationSubtitleKn: 'ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ ಮೆಟ್ರೋ ಸಂಪರ್ಕ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ ಅನುಕೂಲಕರ ಸ್ಥಳ.',
+                locAddress: 'Plot No. 5, Sector 12, Dwarka, New Delhi 110075',
+                locAddressKn: 'ಪ್ಲಾಟ್ ನಂ. 5, ಸೆಕ್ಟರ್ 12, ದ್ವಾರಕಾ, ನವ ದೆಹಲಿ 110075',
+                locLandmark: 'Near Dwarka Mor Metro Station, Sector 12',
+                locLandmarkKn: 'ದ್ವಾರಕಾ ಮೋರ್ ಮೆಟ್ರೋ ನಿಲ್ದಾಣ ಹತ್ತಿರ, ಸೆಕ್ಟರ್ 12',
+                locPlusCode: '7JVW+MH Dwarka, New Delhi, Delhi',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Dwarka+Delhi',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.0!2d77.04!3d28.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM1JzI0LjAiTiA3N8KwMDInMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Narayana Health · Dwarka',
+                footerDesc: 'Providing expert dental care with a gentle touch in Dwarka, New Delhi. Part of the trusted Narayana Health network.',
+                footerDescKn: 'ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
+                footerAddress: 'Plot No. 5, Sector 12, Dwarka, New Delhi 110075',
+                footerAddressKn: 'ಪ್ಲಾಟ್ ನಂ. 5, ಸೆಕ್ಟರ್ 12, ದ್ವಾರಕಾ, ನವ ದೆಹಲಿ 110075',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Dwarka.',
+                review5: 'The best dental clinic in Dwarka! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+            }
+        };
+
+        let currentLocation = localStorage.getItem('selectedLocation') || 'bangalore';
+
+        function toggleLocationDropdown() {
+            const btn = document.getElementById('locationBtn');
+            const dropdown = document.getElementById('locationDropdown');
+            const isOpen = dropdown.classList.contains('open');
+            if (isOpen) {
+                dropdown.classList.remove('open');
+                btn.classList.remove('active');
+            } else {
+                dropdown.classList.add('open');
+                btn.classList.add('active');
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const selector = document.getElementById('locationSelector');
+            if (selector && !selector.contains(e.target)) {
+                document.getElementById('locationDropdown').classList.remove('open');
+                document.getElementById('locationBtn').classList.remove('active');
+            }
+        });
+
+        function switchLocation(loc) {
+            currentLocation = loc;
+            localStorage.setItem('selectedLocation', loc);
+            const data = locationData[loc];
+
+            // Update button text
+            document.getElementById('locationBtnText').textContent = data.city;
+
+            // Update dropdown selected state
+            document.querySelectorAll('.location-dropdown-item').forEach(item => {
+                item.classList.toggle('selected', item.getAttribute('data-location') === loc);
+            });
+
+            // Update page title & meta
+            document.getElementById('pageTitle').textContent = data.title;
+            document.getElementById('pageDesc').setAttribute('content', data.metaDesc);
+
+            // Update all data-loc elements
+            document.querySelectorAll('[data-loc]').forEach(el => {
+                const key = el.getAttribute('data-loc');
+                if (data[key] !== undefined) {
+                    el.textContent = data[key];
+                }
+            });
+
+            // Update map
+            const mapIframe = document.getElementById('mapIframe');
+            if (mapIframe) mapIframe.src = data.mapSrc;
+
+            // Update directions links
+            const dirQuery = 'https://maps.google.com/?q=' + data.directionsQuery;
+            const dirEn = document.getElementById('directionsLinkEn');
+            const dirKn = document.getElementById('directionsLinkKn');
+            if (dirEn) dirEn.href = dirQuery;
+            if (dirKn) dirKn.href = dirQuery;
+
+            // Close dropdown
+            document.getElementById('locationDropdown').classList.remove('open');
+            document.getElementById('locationBtn').classList.remove('active');
+        }
+
+        // Apply saved location on load
+        if (currentLocation) {
+            switchLocation(currentLocation);
+        }
 
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
