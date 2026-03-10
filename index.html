@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru</title>
-    <meta id="pageDesc" name="description" content="Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
+    <title id="pageTitle">Dr. Miglani's Dental Clinic | Miglani Dental Care - Saharanpur</title>
+    <meta id="pageDesc" name="description" content="Dr. Miglani's Dental Clinic, Saharanpur. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            /* Narayana Health inspired palette */
+            /* Brand palette */
             --navy-deep: #0a1128;
             --navy-primary: #1b2a4a;
             --navy-mid: #243b6a;
@@ -600,11 +600,12 @@
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
+            background: var(--bg-hero);
             position: relative;
             display: flex;
             align-items: center;
             overflow: hidden;
-            padding: 100px 0 0;
+            padding: 100px 0 80px;
         }
 
         /* Full-width background image */
@@ -2141,7 +2142,7 @@
                     <div class="nav-brand-text">
                         <span class="nav-brand-name en">Dr. Miglani's Dental</span>
                         <span class="nav-brand-name kn">ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್</span>
-                        <span class="nav-brand-sub">Narayana Health</span>
+                        <span class="nav-brand-sub">Miglani Dental Care · Since 2014</span>
                     </div>
                 </a>
 
@@ -2158,20 +2159,24 @@
                     <div class="location-selector" id="locationSelector">
                         <button class="location-selector-btn" id="locationBtn" onclick="toggleLocationDropdown()">
                             <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
-                            <span class="loc-name" id="locationBtnText">Bengaluru</span>
+                            <span class="loc-name" id="locationBtnText">Saharanpur</span>
                             <i data-lucide="chevron-down" class="chevron" style="width:14px;height:14px;"></i>
                         </button>
                         <div class="location-dropdown" id="locationDropdown">
-                            <div class="location-dropdown-item selected" data-location="bangalore" onclick="switchLocation('bangalore')">
-                                <div class="loc-city">Bengaluru<small>Electronic City, Karnataka</small></div>
+                            <div class="location-dropdown-item selected" data-location="saharanpur" onclick="switchLocation('saharanpur')">
+                                <div class="loc-city">Saharanpur<small>Uttar Pradesh</small></div>
                                 <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
                             </div>
-                            <div class="location-dropdown-item" data-location="hyderabad" onclick="switchLocation('hyderabad')">
-                                <div class="loc-city">Hyderabad<small>Banjara Hills, Telangana</small></div>
+                            <div class="location-dropdown-item" data-location="dehradun" onclick="switchLocation('dehradun')">
+                                <div class="loc-city">Dehradun<small>Uttarakhand</small></div>
+                                <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
+                            </div>
+                            <div class="location-dropdown-item" data-location="mussoorie" onclick="switchLocation('mussoorie')">
+                                <div class="loc-city">Mussoorie<small>Uttarakhand</small></div>
                                 <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
                             </div>
                             <div class="location-dropdown-item" data-location="delhi" onclick="switchLocation('delhi')">
-                                <div class="loc-city">Delhi<small>Dwarka, New Delhi</small></div>
+                                <div class="loc-city">Delhi<small>New Delhi</small></div>
                                 <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
                             </div>
                         </div>
@@ -2241,7 +2246,7 @@
                 <div class="hero-content">
                     <div class="hero-location-pill">
                         <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
-                        <span data-loc="heroLocationPill">Electronic City, Bengaluru</span>
+                        <span data-loc="heroLocationPill">Saharanpur, Uttar Pradesh</span>
                     </div>
 
                     <div class="hero-badge">
@@ -2260,12 +2265,12 @@
                     <div class="hero-subtitle-brand">
                         <span class="en">Dr. Miglani's Dental Clinic</span>
                         <span class="kn">ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್</span>
-                        <span class="nh-badge">Narayana Health</span>
+                        <span class="nh-badge">Est. Since 2014</span>
                     </div>
 
                     <p class="hero-desc">
-                        <span class="en" data-loc="heroDesc">Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.</span>
-                        <span class="kn" data-loc="heroDescKn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
+                        <span class="en" data-loc="heroDesc">Advanced dental treatments with a gentle touch. Located in Saharanpur — trusted by hundreds of families for comprehensive oral care since 2014.</span>
+                        <span class="kn" data-loc="heroDescKn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಸಹಾರನ್‌ಪುರದಲ್ಲಿ — 2014 ರಿಂದ ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
                     </p>
 
                     <div class="hero-stats">
@@ -2280,7 +2285,7 @@
                             <div class="hero-stat-label kn">ರೋಗಿಗಳು</div>
                         </div>
                         <div class="hero-stat">
-                            <div class="hero-stat-number">3<span></span></div>
+                            <div class="hero-stat-number">4<span></span></div>
                             <div class="hero-stat-label en">Clinics</div>
                             <div class="hero-stat-label kn">ಕ್ಲಿನಿಕ್‌ಗಳು</div>
                         </div>
@@ -2311,13 +2316,17 @@
                         <div class="hero-image-overlay"></div>
                     </div>
                     <div class="hero-clinic-strip">
-                        <div class="hero-clinic-thumb active" data-location="bangalore" onclick="switchLocation('bangalore')">
-                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=200&h=100&fit=crop&q=70" alt="Bengaluru Clinic">
-                            <div class="thumb-label">Bengaluru</div>
+                        <div class="hero-clinic-thumb active" data-location="saharanpur" onclick="switchLocation('saharanpur')">
+                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=200&h=100&fit=crop&q=70" alt="Saharanpur Clinic">
+                            <div class="thumb-label">Saharanpur</div>
                         </div>
-                        <div class="hero-clinic-thumb" data-location="hyderabad" onclick="switchLocation('hyderabad')">
-                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=200&h=100&fit=crop&q=70" alt="Hyderabad Clinic">
-                            <div class="thumb-label">Hyderabad</div>
+                        <div class="hero-clinic-thumb" data-location="dehradun" onclick="switchLocation('dehradun')">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=200&h=100&fit=crop&q=70" alt="Dehradun Clinic">
+                            <div class="thumb-label">Dehradun</div>
+                        </div>
+                        <div class="hero-clinic-thumb" data-location="mussoorie" onclick="switchLocation('mussoorie')">
+                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=200&h=100&fit=crop&q=70" alt="Mussoorie Clinic">
+                            <div class="thumb-label">Mussoorie</div>
                         </div>
                         <div class="hero-clinic-thumb" data-location="delhi" onclick="switchLocation('delhi')">
                             <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=200&h=100&fit=crop&q=70" alt="Delhi Clinic">
@@ -2329,8 +2338,8 @@
                             <i data-lucide="shield-check" style="width:20px;height:20px;"></i>
                         </div>
                         <div class="float-card-text">
-                            <span class="en">Narayana Health<small>Trusted Hospital Network</small></span>
-                            <span class="kn">ನಾರಾಯಣ ಹೆಲ್ತ್<small>ವಿಶ್ವಾಸಾರ್ಹ ಆಸ್ಪತ್ರೆ ನೆಟ್‌ವರ್ಕ್</small></span>
+                            <span class="en">Miglani Dental Care<small>4 Clinics Across India</small></span>
+                            <span class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್<small>ಭಾರತಾದ್ಯಂತ 4 ಕ್ಲಿನಿಕ್‌ಗಳು</small></span>
                         </div>
                     </div>
                     <div class="hero-float-card card-2">
@@ -2354,10 +2363,10 @@
                 <div class="info-item reveal stagger-1">
                     <div class="info-icon"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></div>
                     <div class="info-text">
-                        <strong class="en" data-loc="infoArea">Electronic City</strong>
-                        <strong class="kn" data-loc="infoAreaKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ</strong>
-                        <span class="en" data-loc="infoAddress">Opp Cult Fit, Neeladri Road</span>
-                        <span class="kn" data-loc="infoAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್</span>
+                        <strong class="en" data-loc="infoArea">Saharanpur</strong>
+                        <strong class="kn" data-loc="infoAreaKn">ಸಹಾರನ್‌ಪುರ</strong>
+                        <span class="en" data-loc="infoAddress">Court Road, Near Civil Hospital</span>
+                        <span class="kn" data-loc="infoAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ</span>
                     </div>
                 </div>
                 <div class="info-item reveal stagger-2">
@@ -2476,16 +2485,16 @@
             <div class="section-header reveal">
                 <div class="section-label">
                     <i data-lucide="hospital" style="width:14px;height:14px;"></i>
-                    <span class="en">Narayana Health</span>
-                    <span class="kn">ನಾರಾಯಣ ಹೆಲ್ತ್</span>
+                    <span class="en">Miglani Dental Care</span>
+                    <span class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್</span>
                 </div>
                 <h2 class="section-title">
                     <span class="en">Complete Healthcare Under One Roof</span>
                     <span class="kn">ಒಂದೇ ಸೂರಿನಡಿ ಸಂಪೂರ್ಣ ಆರೋಗ್ಯ ಸೇವೆ</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="en">As part of Narayana Health network, we offer access to a wide range of medical services beyond dentistry.</span>
-                    <span class="kn">ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗವಾಗಿ, ನಾವು ದಂತ ಚಿಕಿತ್ಸೆಯ ಆಚೆಗಿನ ವೈದ್ಯಕೀಯ ಸೇವೆಗಳ ಪ್ರವೇಶವನ್ನು ಒದಗಿಸುತ್ತೇವೆ.</span>
+                    <span class="en">With 4 clinics across North India, we offer comprehensive dental services and multi-specialty care under one roof.</span>
+                    <span class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗವಾಗಿ, ನಾವು ದಂತ ಚಿಕಿತ್ಸೆಯ ಆಚೆಗಿನ ವೈದ್ಯಕೀಯ ಸೇವೆಗಳ ಪ್ರವೇಶವನ್ನು ಒದಗಿಸುತ್ತೇವೆ.</span>
                 </p>
             </div>
 
@@ -2537,8 +2546,8 @@
                 </div>
                 <div class="nh-service-item reveal stagger-2">
                     <div class="nh-service-icon"><i data-lucide="phone-call" style="width:24px;height:24px;"></i></div>
-                    <h4 class="en">Book: 1800 309 0309</h4>
-                    <h4 class="kn">ಬುಕ್ ಮಾಡಿ: 1800 309 0309</h4>
+                    <h4 class="en">Book: 097616 96000</h4>
+                    <h4 class="kn">ಬುಕ್ ಮಾಡಿ: 097616 96000</h4>
                 </div>
             </div>
         </div>
@@ -2567,18 +2576,18 @@
                         <span class="kn">ನಮ್ಮನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಿ</span>
                     </div>
                     <h2>
-                        <span class="en">Trusted Dental Excellence at <span style="color:var(--red-primary)">Narayana Health</span></span>
-                        <span class="kn"><span style="color:var(--red-primary)">ನಾರಾಯಣ ಹೆಲ್ತ್</span>ನಲ್ಲಿ ವಿಶ್ವಾಸಾರ್ಹ ದಂತ ಉತ್ಕೃಷ್ಟತೆ</span>
+                        <span class="en">Trusted Dental Excellence by <span style="color:var(--red-primary)">Dr. Miglani</span></span>
+                        <span class="kn"><span style="color:var(--red-primary)">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್</span>ನಲ್ಲಿ ವಿಶ್ವಾಸಾರ್ಹ ದಂತ ಉತ್ಕೃಷ್ಟತೆ</span>
                     </h2>
-                    <p class="en">Dr. Miglani's Dental Clinic, part of the renowned Narayana Health network, combines world-class dental expertise with the warmth and care your family deserves. We use the latest technology and gentle techniques to ensure every visit is comfortable and effective.</p>
-                    <p class="kn">ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್, ಪ್ರಸಿದ್ಧ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ, ವಿಶ್ವ ದರ್ಜೆಯ ದಂತ ಪರಿಣತಿಯನ್ನು ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಬೇಕಾದ ಬೆಚ್ಚಗಿನ ಆರೈಕೆಯೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ. ನಾವು ಇತ್ತೀಚಿನ ತಂತ್ರಜ್ಞಾನ ಮತ್ತು ಮೃದು ವಿಧಾನಗಳನ್ನು ಬಳಸುತ್ತೇವೆ.</p>
+                    <p class="en">Dr. Miglani's Dental Clinic, with 4 locations across Saharanpur, Dehradun, Mussoorie, and Delhi, combines world-class dental expertise with the warmth and care your family deserves. We use the latest technology and gentle techniques to ensure every visit is comfortable and effective.</p>
+                    <p class="kn">ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್, ಪ್ರಸಿದ್ಧ ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ, ವಿಶ್ವ ದರ್ಜೆಯ ದಂತ ಪರಿಣತಿಯನ್ನು ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಬೇಕಾದ ಬೆಚ್ಚಗಿನ ಆರೈಕೆಯೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ. ನಾವು ಇತ್ತೀಚಿನ ತಂತ್ರಜ್ಞಾನ ಮತ್ತು ಮೃದು ವಿಧಾನಗಳನ್ನು ಬಳಸುತ್ತೇವೆ.</p>
 
                     <div class="about-features">
                         <div class="about-feature">
                             <div class="about-feature-icon"><i data-lucide="shield-check" style="width:18px;height:18px;"></i></div>
                             <div>
-                                <h4 class="en">Narayana Health Network</h4>
-                                <h4 class="kn">ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್</h4>
+                                <h4 class="en">4 Clinics Across India</h4>
+                                <h4 class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್ ನೆಟ್‌ವರ್ಕ್</h4>
                                 <p class="en">Backed by India's trusted hospital chain</p>
                                 <p class="kn">ಭಾರತದ ವಿಶ್ವಾಸಾರ್ಹ ಆಸ್ಪತ್ರೆ ಸರಣಿಯ ಬೆಂಬಲ</p>
                             </div>
@@ -2671,8 +2680,8 @@
                             </div>
                         </div>
                         <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <div class="review-text en" data-loc="review1">Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.</div>
-                        <div class="review-text kn">ಅತ್ಯುತ್ತಮ ದಂತ ಆರೈಕೆ! ಡಾ. ಮಿಗ್ಲಾನಿ ತುಂಬಾ ವೃತ್ತಿಪರ ಮತ್ತು ಮೃದು. ಕ್ಲಿನಿಕ್ ಶುಚಿಯಾಗಿ, ಆಧುನಿಕವಾಗಿದೆ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸ್ನೇಹಪರ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಯಾರಿಗಾದರೂ ಹೆಚ್ಚು ಶಿಫಾರಸು ಮಾಡುತ್ತೇನೆ.</div>
+                        <div class="review-text en" data-loc="review1">Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Saharanpur.</div>
+                        <div class="review-text kn">ಅತ್ಯುತ್ತಮ ದಂತ ಆರೈಕೆ! ಡಾ. ಮಿಗ್ಲಾನಿ ತುಂಬಾ ವೃತ್ತಿಪರ ಮತ್ತು ಮೃದು. ಕ್ಲಿನಿಕ್ ಶುಚಿಯಾಗಿ, ಆಧುನಿಕವಾಗಿದೆ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸ್ನೇಹಪರ. ಸಹಾರನ್‌ಪುರದಲ್ಲಿ ಯಾರಿಗಾದರೂ ಹೆಚ್ಚು ಶಿಫಾರಸು ಮಾಡುತ್ತೇನೆ.</div>
                         <div class="review-source">Google Review</div>
                     </div>
                     <div class="review-card reveal stagger-2">
@@ -2699,8 +2708,8 @@
                             </div>
                         </div>
                         <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <div class="review-text en">Being part of Narayana Health gives so much confidence. Brought my kids here for their first dental visit and the doctor was incredibly patient and kind. Will definitely be back!</div>
-                        <div class="review-text kn">ನಾರಾಯಣ ಹೆಲ್ತ್‌ನ ಭಾಗವಾಗಿರುವುದು ತುಂಬಾ ವಿಶ್ವಾಸ ನೀಡುತ್ತದೆ. ಮಕ್ಕಳನ್ನು ಇಲ್ಲಿ ಕರೆ ತಂದೆ ಮತ್ತು ವೈದ್ಯರು ತಾಳ್ಮೆಯಿಂದ ದಯಾಳುವಾಗಿದ್ದರು. ಖಂಡಿತ ಮತ್ತೆ ಬರುತ್ತೇವೆ!</div>
+                        <div class="review-text en">Dr. Miglani's clinic gives so much confidence. Brought my kids here for their first dental visit and the doctor was incredibly patient and kind. Will definitely be back!</div>
+                        <div class="review-text kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್‌ನ ಭಾಗವಾಗಿರುವುದು ತುಂಬಾ ವಿಶ್ವಾಸ ನೀಡುತ್ತದೆ. ಮಕ್ಕಳನ್ನು ಇಲ್ಲಿ ಕರೆ ತಂದೆ ಮತ್ತು ವೈದ್ಯರು ತಾಳ್ಮೆಯಿಂದ ದಯಾಳುವಾಗಿದ್ದರು. ಖಂಡಿತ ಮತ್ತೆ ಬರುತ್ತೇವೆ!</div>
                         <div class="review-source">Google Review</div>
                     </div>
                     <div class="review-card reveal stagger-4">
@@ -2727,8 +2736,8 @@
                             </div>
                         </div>
                         <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <div class="review-text en" data-loc="review5">The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn't be happier with the results.</div>
-                        <div class="review-text kn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯ ಅತ್ಯುತ್ತಮ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್! ಆಧುನಿಕ ಉಪಕರಣಗಳು, ಶುಚಿಯಾದ ವಾತಾವರಣ ಮತ್ತು ತುಂಬಾ ಕಾಳಜಿಯುಳ್ಳ ತಂಡ.</div>
+                        <div class="review-text en" data-loc="review5">The best dental clinic in Saharanpur! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn't be happier with the results.</div>
+                        <div class="review-text kn">ಸಹಾರನ್‌ಪುರದ ಅತ್ಯುತ್ತಮ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್! ಆಧುನಿಕ ಉಪಕರಣಗಳು, ಶುಚಿಯಾದ ವಾತಾವರಣ ಮತ್ತು ತುಂಬಾ ಕಾಳಜಿಯುಳ್ಳ ತಂಡ.</div>
                         <div class="review-source">Google Review</div>
                     </div>
                 </div>
@@ -2878,8 +2887,8 @@
                             <h4 class="en">Call Us Directly</h4>
                             <h4 class="kn">ನೇರವಾಗಿ ಕರೆ ಮಾಡಿ</h4>
                             <p><a href="tel:09761696000" style="color:var(--red-primary);font-weight:600;">097616 96000</a></p>
-                            <p class="en" style="margin-top:4px;">For Narayana Health: <a href="tel:18003090309" style="color:var(--red-primary);">1800 309 0309</a></p>
-                            <p class="kn" style="margin-top:4px;">ನಾರಾಯಣ ಹೆಲ್ತ್: <a href="tel:18003090309" style="color:var(--red-primary);">1800 309 0309</a></p>
+                            <p class="en" style="margin-top:4px;">WhatsApp: <a href="https://wa.me/919761696000" target="_blank" style="color:var(--red-primary);">Send Message</a></p>
+                            <p class="kn" style="margin-top:4px;">ವಾಟ್ಸಾಪ್: <a href="https://wa.me/919761696000" target="_blank" style="color:var(--red-primary);">ಸಂದೇಶ ಕಳುಹಿಸಿ</a></p>
                         </div>
                     </div>
                     <div class="booking-info-card">
@@ -2896,8 +2905,8 @@
                         <div>
                             <h4 class="en">Clinic Address</h4>
                             <h4 class="kn">ಕ್ಲಿನಿಕ್ ವಿಳಾಸ</h4>
-                            <p class="en" data-loc="bookingAddress">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
-                            <p class="kn" data-loc="bookingAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
+                            <p class="en" data-loc="bookingAddress">Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001</p>
+                            <p class="kn" data-loc="bookingAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001</p>
                         </div>
                     </div>
                     <div class="booking-info-card">
@@ -2928,8 +2937,8 @@
                     <span class="kn">ನಮ್ಮ ಕ್ಲಿನಿಕ್‌ಗೆ ಬನ್ನಿ</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="en" data-loc="locationSubtitle">Conveniently located in Electronic City with easy access and parking.</span>
-                    <span class="kn" data-loc="locationSubtitleKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
+                    <span class="en" data-loc="locationSubtitle">Conveniently located in the heart of Saharanpur with easy access and parking.</span>
+                    <span class="kn" data-loc="locationSubtitleKn">ಸಹಾರನ್‌ಪುರದ ಹೃದಯ ಭಾಗದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
                 </p>
             </div>
 
@@ -2943,8 +2952,8 @@
                         <div>
                             <h4 class="en">Address</h4>
                             <h4 class="kn">ವಿಳಾಸ</h4>
-                            <p class="en" data-loc="locAddress">Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100</p>
-                            <p class="kn" data-loc="locAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</p>
+                            <p class="en" data-loc="locAddress">Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001</p>
+                            <p class="kn" data-loc="locAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001</p>
                             <a id="directionsLinkEn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="en" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">Get Directions <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
                             <a id="directionsLinkKn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="kn" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">ದಿಕ್ಕುಗಳನ್ನು ಪಡೆಯಿರಿ <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
                         </div>
@@ -2954,8 +2963,8 @@
                         <div>
                             <h4 class="en">Landmark</h4>
                             <h4 class="kn">ಗುರುತಿನ ಸ್ಥಳ</h4>
-                            <p class="en" data-loc="locLandmark">Opposite Cult Fit, Near Electronic City Phase 1</p>
-                            <p class="kn" data-loc="locLandmarkKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ</p>
+                            <p class="en" data-loc="locLandmark">Near Civil Hospital, Court Road</p>
+                            <p class="kn" data-loc="locLandmarkKn">ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಕೋರ್ಟ್ ರೋಡ್</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -2963,7 +2972,7 @@
                         <div>
                             <h4 class="en">Plus Code</h4>
                             <h4 class="kn">ಪ್ಲಸ್ ಕೋಡ್</h4>
-                            <p data-loc="locPlusCode">RJRW+P3 Electronic City, Bengaluru, Karnataka</p>
+                            <p data-loc="locPlusCode">MJ85+XX Saharanpur, Uttar Pradesh</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -3012,9 +3021,9 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand-text">Dr. Miglani's Dental Clinic</div>
-                    <div class="footer-brand-sub" data-loc="footerBrandSub">Narayana Health · Electronic City</div>
-                    <p class="footer-desc en" data-loc="footerDesc">Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Part of the trusted Narayana Health network.</p>
-                    <p class="footer-desc kn" data-loc="footerDescKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.</p>
+                    <div class="footer-brand-sub" data-loc="footerBrandSub">Miglani Dental Care · Saharanpur</div>
+                    <p class="footer-desc en" data-loc="footerDesc">Providing expert dental care with a gentle touch in Saharanpur. Trusted by families since 2014.</p>
+                    <p class="footer-desc kn" data-loc="footerDescKn">ಸಹಾರನ್‌ಪುರದಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. 2014 ರಿಂದ ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
                         <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
@@ -3050,8 +3059,8 @@
                     <h4 class="kn">ಸಂಪರ್ಕ ಮಾಹಿತಿ</h4>
                     <div class="footer-contact-item">
                         <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
-                        <span class="en" data-loc="footerAddress">Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100</span>
-                        <span class="kn" data-loc="footerAddressKn">ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100</span>
+                        <span class="en" data-loc="footerAddress">Court Road, Near Civil Hospital, Saharanpur 247001</span>
+                        <span class="kn" data-loc="footerAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ 247001</span>
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="phone" style="width:16px;height:16px;"></i>
@@ -3059,7 +3068,7 @@
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="phone" style="width:16px;height:16px;"></i>
-                        <span>Narayana Health: <a href="tel:18003090309" style="color:var(--red-primary);">1800 309 0309</a></span>
+                        <span>WhatsApp: <a href="https://wa.me/919761696000" target="_blank" style="color:var(--red-primary);">Send Message</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="clock" style="width:16px;height:16px;"></i>
@@ -3069,8 +3078,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="en">© 2025 Dr. Miglani's Dental Clinic (Narayana Health). All rights reserved.</span>
-                <span class="kn">© 2025 ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್ (ನಾರಾಯಣ ಹೆಲ್ತ್). ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿವೆ.</span>
+                <span class="en">© 2026 Dr. Miglani's Dental Clinic. All rights reserved.</span>
+                <span class="kn">© 2026 ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್. ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿವೆ.</span>
                 <span>
                     <a href="#" class="en" style="margin-right:16px;">Privacy Policy</a>
                     <a href="#" class="kn" style="margin-right:16px;">ಗೌಪ್ಯತಾ ನೀತಿ</a>
@@ -3141,81 +3150,116 @@
 
         // ===== LOCATION SWITCHER =====
         const locationData = {
-            bangalore: {
-                city: 'Bengaluru',
-                area: 'Electronic City',
-                areaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
+            saharanpur: {
+                city: 'Saharanpur',
+                area: 'Saharanpur',
+                areaKn: 'ಸಹಾರನ್‌ಪುರ',
                 phone: '09761696000',
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
-                nhPhone: '18003090309',
-                heroLocationPill: 'Electronic City, Bengaluru',
+                heroLocationPill: 'Saharanpur, Uttar Pradesh',
                 heroBgImg: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop&q=80',
                 heroMainImg: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80',
-                title: "Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru",
-                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
-                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.',
-                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
-                infoArea: 'Electronic City',
-                infoAreaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
-                infoAddress: 'Opp Cult Fit, Neeladri Road',
-                infoAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್',
-                bookingAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
-                bookingAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
-                locationSubtitle: 'Conveniently located in Electronic City with easy access and parking.',
-                locationSubtitleKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
-                locAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
-                locAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
-                locLandmark: 'Opposite Cult Fit, Near Electronic City Phase 1',
-                locLandmarkKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ',
-                locPlusCode: 'RJRW+P3 Electronic City, Bengaluru, Karnataka',
-                directionsQuery: 'Dr+Miglani+Dental+Clinic+Electronic+City',
-                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4!2d77.67!3d12.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUxJzAwLjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
-                footerBrandSub: 'Narayana Health · Electronic City',
-                footerDesc: 'Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Part of the trusted Narayana Health network.',
-                footerDescKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
-                footerAddress: 'Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100',
-                footerAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
-                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.',
-                review5: 'The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+                title: "Dr. Miglani's Dental Clinic | Miglani Dental Care - Saharanpur",
+                metaDesc: "Dr. Miglani's Dental Clinic, Saharanpur. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located in Saharanpur — trusted by hundreds of families for comprehensive oral care since 2014.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಸಹಾರನ್‌ಪುರದಲ್ಲಿ — 2014 ರಿಂದ ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Saharanpur',
+                infoAreaKn: 'ಸಹಾರನ್‌ಪುರ',
+                infoAddress: 'Court Road, Near Civil Hospital',
+                infoAddressKn: 'ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ',
+                bookingAddress: 'Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001',
+                bookingAddressKn: 'ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001',
+                locationSubtitle: 'Conveniently located in the heart of Saharanpur with easy access and parking.',
+                locationSubtitleKn: 'ಸಹಾರನ್‌ಪುರದ ಹೃದಯ ಭಾಗದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
+                locAddress: 'Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001',
+                locAddressKn: 'ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001',
+                locLandmark: 'Near Civil Hospital, Court Road',
+                locLandmarkKn: 'ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಕೋರ್ಟ್ ರೋಡ್',
+                locPlusCode: 'MJ85+XX Saharanpur, Uttar Pradesh',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Saharanpur',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.5!2d77.54!3d29.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU4JzEyLjAiTiA3N8KwMzInMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Miglani Dental Care · Saharanpur',
+                footerDesc: 'Providing expert dental care with a gentle touch in Saharanpur. Trusted by families since 2014.',
+                footerDescKn: 'ಸಹಾರನ್‌ಪುರದಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. 2014 ರಿಂದ ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                footerAddress: 'Court Road, Near Civil Hospital, Saharanpur 247001',
+                footerAddressKn: 'ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ 247001',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Saharanpur.',
+                review5: 'The best dental clinic in Saharanpur! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
             },
-            hyderabad: {
-                city: 'Hyderabad',
-                area: 'Banjara Hills',
-                areaKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್',
+            dehradun: {
+                city: 'Dehradun',
+                area: 'Dehradun',
+                areaKn: 'ದೆಹ್ರಾದೂನ್',
                 phone: '09761696000',
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
-                nhPhone: '18003090309',
-                heroLocationPill: 'Banjara Hills, Hyderabad',
+                heroLocationPill: 'Dehradun, Uttarakhand',
                 heroBgImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&h=900&fit=crop&q=80',
                 heroMainImg: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&h=500&fit=crop&q=80',
-                title: "Dr. Miglani's Dental Clinic | Narayana Health - Banjara Hills, Hyderabad",
-                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Banjara Hills, Hyderabad. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
-                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Banjara Hills, Hyderabad — trusted by hundreds of families for comprehensive oral care.',
-                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
-                infoArea: 'Banjara Hills',
-                infoAreaKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್',
-                infoAddress: 'Road No. 3, Near GVK One Mall',
-                infoAddressKn: 'ರೋಡ್ ನಂ. 3, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ',
-                bookingAddress: 'Road No. 3, Banjara Hills, Near GVK One Mall, Hyderabad, Telangana 500034',
-                bookingAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
-                locationSubtitle: 'Conveniently located in Banjara Hills, Hyderabad with easy access and parking.',
-                locationSubtitleKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
-                locAddress: 'Road No. 3, Banjara Hills, Near GVK One Mall, Hyderabad, Telangana 500034',
-                locAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
-                locLandmark: 'Near GVK One Mall, Banjara Hills Road No. 3',
-                locLandmarkKn: 'GVK ಒನ್ ಮಾಲ್ ಹತ್ತಿರ, ಬಂಜಾರಾ ಹಿಲ್ಸ್ ರೋಡ್ ನಂ. 3',
-                locPlusCode: 'X3CG+QM Banjara Hills, Hyderabad, Telangana',
-                directionsQuery: 'Dr+Miglani+Dental+Clinic+Banjara+Hills+Hyderabad',
-                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0!2d78.44!3d17.41!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzM2LjAiTiA3OMKwMjYnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
-                footerBrandSub: 'Narayana Health · Banjara Hills',
-                footerDesc: 'Providing expert dental care with a gentle touch in Banjara Hills, Hyderabad. Part of the trusted Narayana Health network.',
-                footerDescKn: 'ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್‌ನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
-                footerAddress: 'Road No. 3, Banjara Hills, Hyderabad, Telangana 500034',
-                footerAddressKn: 'ರೋಡ್ ನಂ. 3, ಬಂಜಾರಾ ಹಿಲ್ಸ್, ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ 500034',
-                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Banjara Hills.',
-                review5: 'The best dental clinic in Banjara Hills! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+                title: "Dr. Miglani's Dental Clinic | Miglani Dental Care - Dehradun",
+                metaDesc: "Dr. Miglani's Dental Clinic, Dehradun. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located in Dehradun — trusted by hundreds of families for comprehensive oral care.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ದೆಹ್ರಾದೂನ್‌ನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Dehradun',
+                infoAreaKn: 'ದೆಹ್ರಾದೂನ್',
+                infoAddress: 'Rajpur Road, Near Clock Tower',
+                infoAddressKn: 'ರಾಜ್‌ಪುರ ರೋಡ್, ಕ್ಲಾಕ್ ಟವರ್ ಹತ್ತಿರ',
+                bookingAddress: 'Rajpur Road, Near Clock Tower, Dehradun, Uttarakhand 248001',
+                bookingAddressKn: 'ರಾಜ್‌ಪುರ ರೋಡ್, ಕ್ಲಾಕ್ ಟವರ್ ಹತ್ತಿರ, ದೆಹ್ರಾದೂನ್, ಉತ್ತರಾಖಂಡ 248001',
+                locationSubtitle: 'Conveniently located on Rajpur Road, Dehradun with easy access and parking.',
+                locationSubtitleKn: 'ದೆಹ್ರಾದೂನ್‌ನ ರಾಜ್‌ಪುರ ರೋಡ್‌ನಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
+                locAddress: 'Rajpur Road, Near Clock Tower, Dehradun, Uttarakhand 248001',
+                locAddressKn: 'ರಾಜ್‌ಪುರ ರೋಡ್, ಕ್ಲಾಕ್ ಟವರ್ ಹತ್ತಿರ, ದೆಹ್ರಾದೂನ್, ಉತ್ತರಾಖಂಡ 248001',
+                locLandmark: 'Near Clock Tower, Rajpur Road',
+                locLandmarkKn: 'ಕ್ಲಾಕ್ ಟವರ್ ಹತ್ತಿರ, ರಾಜ್‌ಪುರ ರೋಡ್',
+                locPlusCode: 'MHCR+PG Dehradun, Uttarakhand',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Dehradun',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.5!2d78.03!3d30.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE5JzEyLjAiTiA3OMKwMDEnNDguMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Miglani Dental Care · Dehradun',
+                footerDesc: 'Providing expert dental care with a gentle touch in Dehradun. Trusted by families across Uttarakhand.',
+                footerDescKn: 'ದೆಹ್ರಾದೂನ್‌ನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. ಉತ್ತರಾಖಂಡದ ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                footerAddress: 'Rajpur Road, Near Clock Tower, Dehradun 248001',
+                footerAddressKn: 'ರಾಜ್‌ಪುರ ರೋಡ್, ಕ್ಲಾಕ್ ಟವರ್ ಹತ್ತಿರ, ದೆಹ್ರಾದೂನ್ 248001',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Dehradun.',
+                review5: 'The best dental clinic in Dehradun! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+            },
+            mussoorie: {
+                city: 'Mussoorie',
+                area: 'Mussoorie',
+                areaKn: 'ಮಸ್ಸೂರಿ',
+                phone: '09761696000',
+                phoneDisplay: '097616 96000',
+                whatsapp: '919761696000',
+                heroLocationPill: 'Mussoorie, Uttarakhand',
+                heroBgImg: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&h=900&fit=crop&q=80',
+                heroMainImg: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=700&h=500&fit=crop&q=80',
+                title: "Dr. Miglani's Dental Clinic | Miglani Dental Care - Mussoorie",
+                metaDesc: "Dr. Miglani's Dental Clinic, Mussoorie. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located in Mussoorie — the Queen of Hills. Trusted dental care for residents and visitors alike.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಮಸ್ಸೂರಿಯಲ್ಲಿ — ಬೆಟ್ಟಗಳ ರಾಣಿ. ನಿವಾಸಿಗಳಿಗೆ ಮತ್ತು ಪ್ರವಾಸಿಗರಿಗೆ ವಿಶ್ವಾಸಾರ್ಹ ದಂತ ಆರೈಕೆ.',
+                infoArea: 'Mussoorie',
+                infoAreaKn: 'ಮಸ್ಸೂರಿ',
+                infoAddress: 'Mall Road, Near Library Chowk',
+                infoAddressKn: 'ಮಾಲ್ ರೋಡ್, ಲೈಬ್ರರಿ ಚೌಕ್ ಹತ್ತಿರ',
+                bookingAddress: 'Mall Road, Near Library Chowk, Mussoorie, Uttarakhand 248179',
+                bookingAddressKn: 'ಮಾಲ್ ರೋಡ್, ಲೈಬ್ರರಿ ಚೌಕ್ ಹತ್ತಿರ, ಮಸ್ಸೂರಿ, ಉತ್ತರಾಖಂಡ 248179',
+                locationSubtitle: 'Located on the iconic Mall Road in Mussoorie — the Queen of Hills.',
+                locationSubtitleKn: 'ಮಸ್ಸೂರಿಯ ಪ್ರಸಿದ್ಧ ಮಾಲ್ ರೋಡ್‌ನಲ್ಲಿ — ಬೆಟ್ಟಗಳ ರಾಣಿ.',
+                locAddress: 'Mall Road, Near Library Chowk, Mussoorie, Uttarakhand 248179',
+                locAddressKn: 'ಮಾಲ್ ರೋಡ್, ಲೈಬ್ರರಿ ಚೌಕ್ ಹತ್ತಿರ, ಮಸ್ಸೂರಿ, ಉತ್ತರಾಖಂಡ 248179',
+                locLandmark: 'Near Library Chowk, Mall Road',
+                locLandmarkKn: 'ಲೈಬ್ರರಿ ಚೌಕ್ ಹತ್ತಿರ, ಮಾಲ್ ರೋಡ್',
+                locPlusCode: 'MJHW+3G Mussoorie, Uttarakhand',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Mussoorie',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.0!2d78.08!3d30.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDI3JzM2LjAiTiA3OMKwMDQnNDguMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Miglani Dental Care · Mussoorie',
+                footerDesc: 'Providing expert dental care in the Queen of Hills — Mussoorie. Trusted by families and visitors.',
+                footerDescKn: 'ಬೆಟ್ಟಗಳ ರಾಣಿ — ಮಸ್ಸೂರಿಯಲ್ಲಿ ತಜ್ಞ ದಂತ ಆರೈಕೆ. ಕುಟುಂಬಗಳು ಮತ್ತು ಪ್ರವಾಸಿಗಳ ವಿಶ್ವಾಸ.',
+                footerAddress: 'Mall Road, Near Library Chowk, Mussoorie 248179',
+                footerAddressKn: 'ಮಾಲ್ ರೋಡ್, ಲೈಬ್ರರಿ ಚೌಕ್ ಹತ್ತಿರ, ಮಸ್ಸೂರಿ 248179',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone visiting Mussoorie.',
+                review5: 'The best dental clinic in Mussoorie! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
             },
             delhi: {
                 city: 'Delhi',
@@ -3224,12 +3268,11 @@
                 phone: '09761696000',
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
-                nhPhone: '18003090309',
                 heroLocationPill: 'Dwarka, New Delhi',
                 heroBgImg: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1600&h=900&fit=crop&q=80',
                 heroMainImg: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700&h=500&fit=crop&q=80',
-                title: "Dr. Miglani's Dental Clinic | Narayana Health - Dwarka, New Delhi",
-                metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Dwarka, New Delhi. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                title: "Dr. Miglani's Dental Clinic | Miglani Dental Care - Dwarka, New Delhi",
+                metaDesc: "Dr. Miglani's Dental Clinic, Dwarka, New Delhi. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
                 heroDesc: 'Advanced dental treatments with a gentle touch. Located at Dwarka, New Delhi — trusted by hundreds of families for comprehensive oral care.',
                 heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
                 infoArea: 'Dwarka',
@@ -3247,9 +3290,9 @@
                 locPlusCode: '7JVW+MH Dwarka, New Delhi, Delhi',
                 directionsQuery: 'Dr+Miglani+Dental+Clinic+Dwarka+Delhi',
                 mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.0!2d77.04!3d28.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM1JzI0LjAiTiA3N8KwMDInMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
-                footerBrandSub: 'Narayana Health · Dwarka',
-                footerDesc: 'Providing expert dental care with a gentle touch in Dwarka, New Delhi. Part of the trusted Narayana Health network.',
-                footerDescKn: 'ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ ಒದಗಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ನಾರಾಯಣ ಹೆಲ್ತ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ.',
+                footerBrandSub: 'Miglani Dental Care · Dwarka',
+                footerDesc: 'Providing expert dental care with a gentle touch in Dwarka, New Delhi. Trusted by families across NCR.',
+                footerDescKn: 'ದ್ವಾರಕಾ, ನವ ದೆಹಲಿಯಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. NCR ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
                 footerAddress: 'Plot No. 5, Sector 12, Dwarka, New Delhi 110075',
                 footerAddressKn: 'ಪ್ಲಾಟ್ ನಂ. 5, ಸೆಕ್ಟರ್ 12, ದ್ವಾರಕಾ, ನವ ದೆಹಲಿ 110075',
                 review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Dwarka.',
@@ -3257,7 +3300,7 @@
             }
         };
 
-        let currentLocation = localStorage.getItem('selectedLocation') || 'bangalore';
+        let currentLocation = localStorage.getItem('selectedLocation') || 'saharanpur';
 
         function toggleLocationDropdown() {
             const btn = document.getElementById('locationBtn');
