@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Dr. Miglani's Dental Clinic | Miglani Dental Care - Saharanpur</title>
-    <meta id="pageDesc" name="description" content="Dr. Miglani's Dental Clinic, Saharanpur. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
+    <title id="pageTitle">Dr. Miglani's Dental Clinic | Miglani Dental Care - Bengaluru</title>
+    <meta id="pageDesc" name="description" content="Dr. Miglani's Dental Clinic, Electronic City, Bengaluru. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -665,16 +665,19 @@
         .particle:nth-child(4) { width: 100px; height: 100px; bottom: 30%; left: 30%; animation-delay: 1s; background: rgba(46,196,182,0.05); }
 
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 48px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             position: relative;
             z-index: 3;
+            gap: 0;
         }
 
         .hero-content {
             color: white;
+            max-width: 720px;
+            margin: 0 auto;
         }
 
         /* Location pill in hero */
@@ -747,6 +750,7 @@
             animation: fadeInUp 0.8s ease 0.15s both;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
         }
@@ -766,13 +770,16 @@
             font-size: 16px;
             color: rgba(255,255,255,0.65);
             margin-bottom: 32px;
-            max-width: 520px;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.8;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero-stats {
             display: flex;
+            justify-content: center;
             gap: 32px;
             margin-bottom: 36px;
             animation: fadeInUp 0.8s ease 0.25s both;
@@ -804,28 +811,32 @@
 
         .hero-buttons {
             display: flex;
+            justify-content: center;
             gap: 14px;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
 
-        /* Hero Right - Visual Showcase */
+        /* Hero Bottom - Visual Showcase (full-width centered below content) */
         .hero-visual {
             position: relative;
-            animation: fadeInRight 1s ease 0.3s both;
+            animation: fadeInUp 1s ease 0.3s both;
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto 0;
         }
 
         .hero-image-wrapper {
             position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .hero-image-wrapper img {
             width: 100%;
-            height: 460px;
+            height: 380px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -837,32 +848,43 @@
         .hero-image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(10,17,40,0.5) 100%);
+            background: linear-gradient(180deg, transparent 40%, rgba(10,17,40,0.6) 100%);
         }
 
-        /* Clinic image thumbnails strip */
+        /* Clinic image thumbnails strip - overlaid on bottom of hero image */
         .hero-clinic-strip {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             gap: 10px;
-            margin-top: 14px;
+            z-index: 5;
             animation: fadeInUp 0.8s ease 0.5s both;
+            background: rgba(10,17,40,0.6);
+            backdrop-filter: blur(12px);
+            padding: 8px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .hero-clinic-thumb {
-            flex: 1;
-            height: 72px;
-            border-radius: 12px;
+            width: 90px;
+            height: 60px;
+            border-radius: 10px;
             overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.15);
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
+            flex-shrink: 0;
         }
 
         .hero-clinic-thumb:hover,
         .hero-clinic-thumb.active {
             border-color: var(--red-primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(230,57,70,0.3);
         }
 
         .hero-clinic-thumb img {
@@ -876,9 +898,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 3px 6px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            font-size: 9.5px;
+            padding: 2px 4px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            font-size: 8.5px;
             font-weight: 600;
             color: white;
             text-align: center;
@@ -959,14 +981,14 @@
         }
 
         .hero-float-card.card-1 {
-            bottom: -20px;
-            left: -30px;
+            top: 20px;
+            left: 20px;
             animation-delay: 0s;
         }
 
         .hero-float-card.card-2 {
             top: 20px;
-            right: -20px;
+            right: 20px;
             animation-delay: 1.5s;
         }
 
@@ -2031,8 +2053,7 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-            .hero-visual { max-width: 520px; margin: 0 auto; }
+            .hero-visual { max-width: 100%; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .nh-services-grid { grid-template-columns: repeat(3, 1fr); }
@@ -2058,10 +2079,11 @@
 
             .hero-float-card { display: none; }
 
-            .hero-image-wrapper img { height: 300px; }
+            .hero-image-wrapper img { height: 260px; }
 
-            .hero-clinic-strip { gap: 6px; }
-            .hero-clinic-thumb { height: 56px; }
+            .hero-clinic-strip { gap: 6px; padding: 6px 8px; }
+            .hero-clinic-thumb { width: 60px; height: 44px; }
+            .hero-clinic-thumb .thumb-label { font-size: 7px; }
             
             .services-grid { grid-template-columns: 1fr; }
             .nh-services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2159,11 +2181,15 @@
                     <div class="location-selector" id="locationSelector">
                         <button class="location-selector-btn" id="locationBtn" onclick="toggleLocationDropdown()">
                             <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
-                            <span class="loc-name" id="locationBtnText">Saharanpur</span>
+                            <span class="loc-name" id="locationBtnText">Bengaluru</span>
                             <i data-lucide="chevron-down" class="chevron" style="width:14px;height:14px;"></i>
                         </button>
                         <div class="location-dropdown" id="locationDropdown">
-                            <div class="location-dropdown-item selected" data-location="saharanpur" onclick="switchLocation('saharanpur')">
+                            <div class="location-dropdown-item selected" data-location="bangalore" onclick="switchLocation('bangalore')">
+                                <div class="loc-city">Bengaluru<small>Electronic City, Karnataka</small></div>
+                                <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
+                            </div>
+                            <div class="location-dropdown-item" data-location="saharanpur" onclick="switchLocation('saharanpur')">
                                 <div class="loc-city">Saharanpur<small>Uttar Pradesh</small></div>
                                 <i data-lucide="check" class="loc-check" style="width:16px;height:16px;"></i>
                             </div>
@@ -2246,7 +2272,7 @@
                 <div class="hero-content">
                     <div class="hero-location-pill">
                         <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
-                        <span data-loc="heroLocationPill">Saharanpur, Uttar Pradesh</span>
+                        <span data-loc="heroLocationPill">Electronic City, Bengaluru</span>
                     </div>
 
                     <div class="hero-badge">
@@ -2269,8 +2295,8 @@
                     </div>
 
                     <p class="hero-desc">
-                        <span class="en" data-loc="heroDesc">Advanced dental treatments with a gentle touch. Located in Saharanpur — trusted by hundreds of families for comprehensive oral care since 2014.</span>
-                        <span class="kn" data-loc="heroDescKn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಸಹಾರನ್‌ಪುರದಲ್ಲಿ — 2014 ರಿಂದ ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
+                        <span class="en" data-loc="heroDesc">Advanced dental treatments with a gentle touch. Located in Electronic City, Bengaluru — trusted by thousands of families for comprehensive oral care.</span>
+                        <span class="kn" data-loc="heroDescKn">ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ಸಾವಿರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</span>
                     </p>
 
                     <div class="hero-stats">
@@ -2285,7 +2311,7 @@
                             <div class="hero-stat-label kn">ರೋಗಿಗಳು</div>
                         </div>
                         <div class="hero-stat">
-                            <div class="hero-stat-number">4<span></span></div>
+                            <div class="hero-stat-number">5<span></span></div>
                             <div class="hero-stat-label en">Clinics</div>
                             <div class="hero-stat-label kn">ಕ್ಲಿನಿಕ್‌ಗಳು</div>
                         </div>
@@ -2312,11 +2338,14 @@
 
                 <div class="hero-visual">
                     <div class="hero-image-wrapper">
-                        <img id="heroMainImg" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80" alt="Dr. Miglani's Dental Clinic" loading="eager">
+                        <img id="heroMainImg" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=420&fit=crop&q=80" alt="Dr. Miglani's Dental Clinic" loading="eager">
                         <div class="hero-image-overlay"></div>
-                    </div>
                     <div class="hero-clinic-strip">
-                        <div class="hero-clinic-thumb active" data-location="saharanpur" onclick="switchLocation('saharanpur')">
+                        <div class="hero-clinic-thumb active" data-location="bangalore" onclick="switchLocation('bangalore')">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=200&h=100&fit=crop&q=70" alt="Bengaluru Clinic">
+                            <div class="thumb-label">Bengaluru</div>
+                        </div>
+                        <div class="hero-clinic-thumb" data-location="saharanpur" onclick="switchLocation('saharanpur')">
                             <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=200&h=100&fit=crop&q=70" alt="Saharanpur Clinic">
                             <div class="thumb-label">Saharanpur</div>
                         </div>
@@ -2333,13 +2362,14 @@
                             <div class="thumb-label">Delhi</div>
                         </div>
                     </div>
+                    </div>
                     <div class="hero-float-card card-1">
                         <div class="float-card-icon green">
                             <i data-lucide="shield-check" style="width:20px;height:20px;"></i>
                         </div>
                         <div class="float-card-text">
-                            <span class="en">Miglani Dental Care<small>4 Clinics Across India</small></span>
-                            <span class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್<small>ಭಾರತಾದ್ಯಂತ 4 ಕ್ಲಿನಿಕ್‌ಗಳು</small></span>
+                            <span class="en">Miglani Dental Care<small>5 Clinics Across India</small></span>
+                            <span class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್<small>ಭಾರತಾದ್ಯಂತ 5 ಕ್ಲಿನಿಕ್‌ಗಳು</small></span>
                         </div>
                     </div>
                     <div class="hero-float-card card-2">
@@ -2363,10 +2393,10 @@
                 <div class="info-item reveal stagger-1">
                     <div class="info-icon"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></div>
                     <div class="info-text">
-                        <strong class="en" data-loc="infoArea">Saharanpur</strong>
-                        <strong class="kn" data-loc="infoAreaKn">ಸಹಾರನ್‌ಪುರ</strong>
-                        <span class="en" data-loc="infoAddress">Court Road, Near Civil Hospital</span>
-                        <span class="kn" data-loc="infoAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ</span>
+                        <strong class="en" data-loc="infoArea">Electronic City, Bengaluru</strong>
+                        <strong class="kn" data-loc="infoAreaKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರು</strong>
+                        <span class="en" data-loc="infoAddress">Electronic City Phase 1, Hosur Road</span>
+                        <span class="kn" data-loc="infoAddressKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1, ಹೊಸೂರು ರಸ್ತೆ</span>
                     </div>
                 </div>
                 <div class="info-item reveal stagger-2">
@@ -2579,14 +2609,14 @@
                         <span class="en">Trusted Dental Excellence by <span style="color:var(--red-primary)">Dr. Miglani</span></span>
                         <span class="kn"><span style="color:var(--red-primary)">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್</span>ನಲ್ಲಿ ವಿಶ್ವಾಸಾರ್ಹ ದಂತ ಉತ್ಕೃಷ್ಟತೆ</span>
                     </h2>
-                    <p class="en">Dr. Miglani's Dental Clinic, with 4 locations across Saharanpur, Dehradun, Mussoorie, and Delhi, combines world-class dental expertise with the warmth and care your family deserves. We use the latest technology and gentle techniques to ensure every visit is comfortable and effective.</p>
+                    <p class="en">Dr. Miglani's Dental Clinic, with 5 locations across Bengaluru, Saharanpur, Dehradun, Mussoorie, and Delhi, combines world-class dental expertise with the warmth and care your family deserves. We use the latest technology and gentle techniques to ensure every visit is comfortable and effective.</p>
                     <p class="kn">ಡಾ. ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್, ಪ್ರಸಿದ್ಧ ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್ ನೆಟ್‌ವರ್ಕ್‌ನ ಭಾಗ, ವಿಶ್ವ ದರ್ಜೆಯ ದಂತ ಪರಿಣತಿಯನ್ನು ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಬೇಕಾದ ಬೆಚ್ಚಗಿನ ಆರೈಕೆಯೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ. ನಾವು ಇತ್ತೀಚಿನ ತಂತ್ರಜ್ಞಾನ ಮತ್ತು ಮೃದು ವಿಧಾನಗಳನ್ನು ಬಳಸುತ್ತೇವೆ.</p>
 
                     <div class="about-features">
                         <div class="about-feature">
                             <div class="about-feature-icon"><i data-lucide="shield-check" style="width:18px;height:18px;"></i></div>
                             <div>
-                                <h4 class="en">4 Clinics Across India</h4>
+                                <h4 class="en">5 Clinics Across India</h4>
                                 <h4 class="kn">ಮಿಗ್ಲಾನಿ ಡೆಂಟಲ್ ಕೇರ್ ನೆಟ್‌ವರ್ಕ್</h4>
                                 <p class="en">Backed by India's trusted hospital chain</p>
                                 <p class="kn">ಭಾರತದ ವಿಶ್ವಾಸಾರ್ಹ ಆಸ್ಪತ್ರೆ ಸರಣಿಯ ಬೆಂಬಲ</p>
@@ -2905,8 +2935,8 @@
                         <div>
                             <h4 class="en">Clinic Address</h4>
                             <h4 class="kn">ಕ್ಲಿನಿಕ್ ವಿಳಾಸ</h4>
-                            <p class="en" data-loc="bookingAddress">Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001</p>
-                            <p class="kn" data-loc="bookingAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001</p>
+                            <p class="en" data-loc="bookingAddress">Electronic City Phase 1, Hosur Road, Bengaluru, Karnataka 560100</p>
+                            <p class="kn" data-loc="bookingAddressKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1, ಹೊಸೂರು ರಸ್ತೆ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560100</p>
                         </div>
                     </div>
                     <div class="booking-info-card">
@@ -2937,8 +2967,8 @@
                     <span class="kn">ನಮ್ಮ ಕ್ಲಿನಿಕ್‌ಗೆ ಬನ್ನಿ</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="en" data-loc="locationSubtitle">Conveniently located in the heart of Saharanpur with easy access and parking.</span>
-                    <span class="kn" data-loc="locationSubtitleKn">ಸಹಾರನ್‌ಪುರದ ಹೃದಯ ಭಾಗದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
+                    <span class="en" data-loc="locationSubtitle">Conveniently located in Electronic City with easy access and parking.</span>
+                    <span class="kn" data-loc="locationSubtitleKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.</span>
                 </p>
             </div>
 
@@ -2952,8 +2982,8 @@
                         <div>
                             <h4 class="en">Address</h4>
                             <h4 class="kn">ವಿಳಾಸ</h4>
-                            <p class="en" data-loc="locAddress">Court Road, Near Civil Hospital, Saharanpur, Uttar Pradesh 247001</p>
-                            <p class="kn" data-loc="locAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ, ಉತ್ತರ ಪ್ರದೇಶ 247001</p>
+                            <p class="en" data-loc="locAddress">Electronic City Phase 1, Hosur Road, Bengaluru, Karnataka 560100</p>
+                            <p class="kn" data-loc="locAddressKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1, ಹೊಸೂರು ರಸ್ತೆ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560100</p>
                             <a id="directionsLinkEn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="en" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">Get Directions <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
                             <a id="directionsLinkKn" href="https://maps.google.com/?q=Dr+Miglani+Dental+Clinic+Electronic+City" target="_blank" class="kn" style="display:inline-flex;align-items:center;gap:4px;margin-top:6px;">ದಿಕ್ಕುಗಳನ್ನು ಪಡೆಯಿರಿ <i data-lucide="external-link" style="width:13px;height:13px;"></i></a>
                         </div>
@@ -2963,8 +2993,8 @@
                         <div>
                             <h4 class="en">Landmark</h4>
                             <h4 class="kn">ಗುರುತಿನ ಸ್ಥಳ</h4>
-                            <p class="en" data-loc="locLandmark">Near Civil Hospital, Court Road</p>
-                            <p class="kn" data-loc="locLandmarkKn">ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಕೋರ್ಟ್ ರೋಡ್</p>
+                            <p class="en" data-loc="locLandmark">Near Infosys Campus, Electronic City</p>
+                            <p class="kn" data-loc="locLandmarkKn">ಇನ್ಫೋಸಿಸ್ ಕ್ಯಾಂಪಸ್ ಹತ್ತಿರ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -2972,7 +3002,7 @@
                         <div>
                             <h4 class="en">Plus Code</h4>
                             <h4 class="kn">ಪ್ಲಸ್ ಕೋಡ್</h4>
-                            <p data-loc="locPlusCode">MJ85+XX Saharanpur, Uttar Pradesh</p>
+                            <p data-loc="locPlusCode">3FCV+XQ Electronic City, Bengaluru</p>
                         </div>
                     </div>
                     <div class="location-card">
@@ -3021,9 +3051,9 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand-text">Dr. Miglani's Dental Clinic</div>
-                    <div class="footer-brand-sub" data-loc="footerBrandSub">Miglani Dental Care · Saharanpur</div>
-                    <p class="footer-desc en" data-loc="footerDesc">Providing expert dental care with a gentle touch in Saharanpur. Trusted by families since 2014.</p>
-                    <p class="footer-desc kn" data-loc="footerDescKn">ಸಹಾರನ್‌ಪುರದಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. 2014 ರಿಂದ ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</p>
+                    <div class="footer-brand-sub" data-loc="footerBrandSub">Miglani Dental Care · Bengaluru</div>
+                    <p class="footer-desc en" data-loc="footerDesc">Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Trusted by thousands of families.</p>
+                    <p class="footer-desc kn" data-loc="footerDescKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. ಸಾವಿರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
                         <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
@@ -3059,8 +3089,8 @@
                     <h4 class="kn">ಸಂಪರ್ಕ ಮಾಹಿತಿ</h4>
                     <div class="footer-contact-item">
                         <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
-                        <span class="en" data-loc="footerAddress">Court Road, Near Civil Hospital, Saharanpur 247001</span>
-                        <span class="kn" data-loc="footerAddressKn">ಕೋರ್ಟ್ ರೋಡ್, ಸಿವಿಲ್ ಆಸ್ಪತ್ರೆ ಹತ್ತಿರ, ಸಹಾರನ್‌ಪುರ 247001</span>
+                        <span class="en" data-loc="footerAddress">Electronic City Phase 1, Hosur Road, Bengaluru 560100</span>
+                        <span class="kn" data-loc="footerAddressKn">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1, ಹೊಸೂರು ರಸ್ತೆ, ಬೆಂಗಳೂರು 560100</span>
                     </div>
                     <div class="footer-contact-item">
                         <i data-lucide="phone" style="width:16px;height:16px;"></i>
@@ -3150,6 +3180,43 @@
 
         // ===== LOCATION SWITCHER =====
         const locationData = {
+            bangalore: {
+                city: 'Bengaluru',
+                area: 'Electronic City',
+                areaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
+                phone: '09761696000',
+                phoneDisplay: '097616 96000',
+                whatsapp: '919761696000',
+                heroLocationPill: 'Electronic City, Bengaluru',
+                heroBgImg: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop&q=80',
+                heroMainImg: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80',
+                title: "Dr. Miglani's Dental Clinic | Miglani Dental Care - Electronic City, Bengaluru",
+                metaDesc: "Dr. Miglani's Dental Clinic, Electronic City, Bengaluru. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
+                heroDesc: 'Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.',
+                heroDescKn: 'ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ಮುಂದುವರಿದ ದಂತ ಚಿಕಿತ್ಸೆ. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ — ನೂರಾರು ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                infoArea: 'Electronic City',
+                infoAreaKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ',
+                infoAddress: 'Opp Cult Fit, Neeladri Road',
+                infoAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್',
+                bookingAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
+                bookingAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                locationSubtitle: 'Conveniently located in Electronic City with easy access and parking.',
+                locationSubtitleKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿಯಲ್ಲಿ ಅನುಕೂಲಕರ ಸ್ಥಳದಲ್ಲಿ ಸುಲಭ ಪ್ರವೇಶ ಮತ್ತು ಪಾರ್ಕಿಂಗ್‌ನೊಂದಿಗೆ.',
+                locAddress: 'Opp Cult Fit, Neeladri Road, Doddathoguru Village, Electronic City, Karnataka 560100',
+                locAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ದೊಡ್ಡಥೋಗುರು ಗ್ರಾಮ, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                locLandmark: 'Opposite Cult Fit, Near Electronic City Phase 1',
+                locLandmarkKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ ಫೇಸ್ 1 ಹತ್ತಿರ',
+                locPlusCode: 'RJRW+P3 Electronic City, Bengaluru, Karnataka',
+                directionsQuery: 'Dr+Miglani+Dental+Clinic+Electronic+City',
+                mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4!2d77.67!3d12.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUxJzAwLjAiTiA3N8KwNDAnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890',
+                footerBrandSub: 'Miglani Dental Care · Electronic City',
+                footerDesc: 'Providing expert dental care with a gentle touch in Electronic City, Bengaluru. Trusted by families since 2014.',
+                footerDescKn: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮೃದು ಸ್ಪರ್ಶದೊಂದಿಗೆ ತಜ್ಞ ದಂತ ಆರೈಕೆ. 2014 ರಿಂದ ಕುಟುಂಬಗಳ ವಿಶ್ವಾಸ.',
+                footerAddress: 'Opp Cult Fit, Neeladri Road, Electronic City, Karnataka 560100',
+                footerAddressKn: 'ಕಲ್ಟ್ ಫಿಟ್ ಎದುರು, ನೀಲಾದ್ರಿ ರೋಡ್, ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ, ಕರ್ನಾಟಕ 560100',
+                review1: 'Excellent dental care! Dr. Miglani is very professional and gentle. The clinic is clean, modern, and the staff is friendly. Highly recommend for anyone in Electronic City.',
+                review5: 'The best dental clinic in Electronic City! Modern equipment, hygienic environment, and a very caring team. Got my dental implant here and couldn\'t be happier with the results.'
+            },
             saharanpur: {
                 city: 'Saharanpur',
                 area: 'Saharanpur',
@@ -3300,7 +3367,7 @@
             }
         };
 
-        let currentLocation = localStorage.getItem('selectedLocation') || 'saharanpur';
+        let currentLocation = localStorage.getItem('selectedLocation') || 'bangalore';
 
         function toggleLocationDropdown() {
             const btn = document.getElementById('locationBtn');
