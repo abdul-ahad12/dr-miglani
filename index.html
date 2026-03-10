@@ -600,26 +600,34 @@
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
-            background: var(--bg-hero);
             position: relative;
             display: flex;
             align-items: center;
             overflow: hidden;
-            padding: 100px 0 80px;
+            padding: 100px 0 0;
         }
 
-        .hero::before {
+        /* Full-width background image */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.6s ease;
+        }
+
+        .hero-bg::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(230,57,70,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(58,91,160,0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(46,196,182,0.08) 0%, transparent 50%);
-            pointer-events: none;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(10,17,40,0.92) 0%, rgba(27,42,74,0.8) 40%, rgba(36,59,106,0.65) 100%);
+            z-index: 1;
         }
 
         .hero::after {
@@ -628,9 +636,10 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 120px;
+            height: 150px;
             background: linear-gradient(to top, var(--bg-primary), transparent);
             pointer-events: none;
+            z-index: 2;
         }
 
         /* Floating particles */
@@ -639,31 +648,54 @@
             inset: 0;
             pointer-events: none;
             overflow: hidden;
+            z-index: 1;
         }
 
         .particle {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.04);
             animation: float 6s ease-in-out infinite;
         }
 
         .particle:nth-child(1) { width: 300px; height: 300px; top: -50px; right: -80px; animation-delay: 0s; }
         .particle:nth-child(2) { width: 200px; height: 200px; bottom: 10%; left: -50px; animation-delay: 2s; }
-        .particle:nth-child(3) { width: 150px; height: 150px; top: 30%; right: 20%; animation-delay: 4s; background: rgba(230,57,70,0.06); }
-        .particle:nth-child(4) { width: 100px; height: 100px; bottom: 30%; left: 30%; animation-delay: 1s; background: rgba(46,196,182,0.06); }
+        .particle:nth-child(3) { width: 150px; height: 150px; top: 30%; right: 20%; animation-delay: 4s; background: rgba(230,57,70,0.05); }
+        .particle:nth-child(4) { width: 100px; height: 100px; bottom: 30%; left: 30%; animation-delay: 1s; background: rgba(46,196,182,0.05); }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
             align-items: center;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .hero-content {
             color: white;
+        }
+
+        /* Location pill in hero */
+        .hero-location-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background: rgba(230,57,70,0.15);
+            border: 1px solid rgba(230,57,70,0.3);
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--red-primary);
+            margin-bottom: 18px;
+            animation: fadeInUp 0.6s ease forwards;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-location-pill i {
+            width: 14px;
+            height: 14px;
         }
 
         .hero-badge {
@@ -672,14 +704,14 @@
             gap: 8px;
             padding: 8px 18px;
             border-radius: 50px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
             backdrop-filter: blur(10px);
             font-size: 13px;
             font-weight: 600;
             color: rgba(255,255,255,0.9);
             margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 0.8s ease 0.05s both;
         }
 
         .hero-badge .star-rating {
@@ -694,10 +726,11 @@
 
         .hero-title {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            line-height: 1.15;
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            line-height: 1.1;
             margin-bottom: 8px;
             animation: fadeInUp 0.8s ease 0.1s both;
+            letter-spacing: -0.5px;
         }
 
         .hero-title .highlight {
@@ -706,14 +739,15 @@
         }
 
         .hero-subtitle-brand {
-            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-size: clamp(1rem, 2vw, 1.25rem);
             font-weight: 500;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.55);
             margin-bottom: 20px;
             animation: fadeInUp 0.8s ease 0.15s both;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .nh-badge {
@@ -729,9 +763,9 @@
 
         .hero-desc {
             font-size: 16px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.65);
             margin-bottom: 32px;
-            max-width: 500px;
+            max-width: 520px;
             line-height: 1.8;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
@@ -760,7 +794,7 @@
 
         .hero-stat-label {
             font-size: 12px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.45);
             font-weight: 500;
             margin-top: 4px;
             text-transform: uppercase;
@@ -772,6 +806,83 @@
             gap: 14px;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        /* Hero Right - Visual Showcase */
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease 0.3s both;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(10,17,40,0.5) 100%);
+        }
+
+        /* Clinic image thumbnails strip */
+        .hero-clinic-strip {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .hero-clinic-thumb {
+            flex: 1;
+            height: 72px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hero-clinic-thumb:hover,
+        .hero-clinic-thumb.active {
+            border-color: var(--red-primary);
+            transform: translateY(-2px);
+        }
+
+        .hero-clinic-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-clinic-thumb .thumb-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3px 6px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            font-size: 9.5px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
         }
 
         .btn-primary {
@@ -824,31 +935,6 @@
             background: rgba(255,255,255,0.15);
             border-color: rgba(255,255,255,0.35);
             transform: translateY(-2px);
-        }
-
-        /* Hero Right - Image/Visual */
-        .hero-visual {
-            position: relative;
-            animation: fadeInRight 1s ease 0.4s both;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 440px;
-            object-fit: cover;
-        }
-
-        .hero-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(10,17,40,0.2), transparent 60%);
         }
 
         /* Floating Info Cards on Hero */
@@ -1944,8 +2030,8 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-            .hero-visual { max-width: 500px; margin: 0 auto; }
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .hero-visual { max-width: 520px; margin: 0 auto; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .nh-services-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1965,13 +2051,16 @@
                 padding: 90px 0 60px;
                 min-height: auto;
             }
-            
+
             .hero-stats { gap: 20px; }
             .hero-stat-number { font-size: 1.6rem; }
-            
+
             .hero-float-card { display: none; }
-            
+
             .hero-image-wrapper img { height: 300px; }
+
+            .hero-clinic-strip { gap: 6px; }
+            .hero-clinic-thumb { height: 56px; }
             
             .services-grid { grid-template-columns: 1fr; }
             .nh-services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2138,6 +2227,9 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
+        <div class="hero-bg">
+            <img id="heroBgImg" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop&q=80" alt="Dental Clinic Background" loading="eager">
+        </div>
         <div class="hero-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -2147,6 +2239,11 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
+                    <div class="hero-location-pill">
+                        <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
+                        <span data-loc="heroLocationPill">Electronic City, Bengaluru</span>
+                    </div>
+
                     <div class="hero-badge">
                         <div class="star-rating">
                             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -2183,9 +2280,9 @@
                             <div class="hero-stat-label kn">ರೋಗಿಗಳು</div>
                         </div>
                         <div class="hero-stat">
-                            <div class="hero-stat-number">11<span>+</span></div>
-                            <div class="hero-stat-label en">Services</div>
-                            <div class="hero-stat-label kn">ಸೇವೆಗಳು</div>
+                            <div class="hero-stat-number">3<span></span></div>
+                            <div class="hero-stat-label en">Clinics</div>
+                            <div class="hero-stat-label kn">ಕ್ಲಿನಿಕ್‌ಗಳು</div>
                         </div>
                         <div class="hero-stat">
                             <div class="hero-stat-number">5.0</div>
@@ -2210,8 +2307,22 @@
 
                 <div class="hero-visual">
                     <div class="hero-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=500&fit=crop" alt="Modern Dental Clinic" loading="eager">
+                        <img id="heroMainImg" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80" alt="Dr. Miglani's Dental Clinic" loading="eager">
                         <div class="hero-image-overlay"></div>
+                    </div>
+                    <div class="hero-clinic-strip">
+                        <div class="hero-clinic-thumb active" data-location="bangalore" onclick="switchLocation('bangalore')">
+                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=200&h=100&fit=crop&q=70" alt="Bengaluru Clinic">
+                            <div class="thumb-label">Bengaluru</div>
+                        </div>
+                        <div class="hero-clinic-thumb" data-location="hyderabad" onclick="switchLocation('hyderabad')">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=200&h=100&fit=crop&q=70" alt="Hyderabad Clinic">
+                            <div class="thumb-label">Hyderabad</div>
+                        </div>
+                        <div class="hero-clinic-thumb" data-location="delhi" onclick="switchLocation('delhi')">
+                            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=200&h=100&fit=crop&q=70" alt="Delhi Clinic">
+                            <div class="thumb-label">Delhi</div>
+                        </div>
                     </div>
                     <div class="hero-float-card card-1">
                         <div class="float-card-icon green">
@@ -3038,6 +3149,9 @@
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
                 nhPhone: '18003090309',
+                heroLocationPill: 'Electronic City, Bengaluru',
+                heroBgImg: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop&q=80',
+                heroMainImg: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80',
                 title: "Dr. Miglani's Dental Clinic | Narayana Health - Electronic City, Bengaluru",
                 metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Electronic City. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
                 heroDesc: 'Advanced dental treatments with a gentle touch. Located at Electronic City, Bengaluru — trusted by hundreds of families for comprehensive oral care.',
@@ -3073,6 +3187,9 @@
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
                 nhPhone: '18003090309',
+                heroLocationPill: 'Banjara Hills, Hyderabad',
+                heroBgImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&h=900&fit=crop&q=80',
+                heroMainImg: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&h=500&fit=crop&q=80',
                 title: "Dr. Miglani's Dental Clinic | Narayana Health - Banjara Hills, Hyderabad",
                 metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Banjara Hills, Hyderabad. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
                 heroDesc: 'Advanced dental treatments with a gentle touch. Located at Banjara Hills, Hyderabad — trusted by hundreds of families for comprehensive oral care.',
@@ -3108,6 +3225,9 @@
                 phoneDisplay: '097616 96000',
                 whatsapp: '919761696000',
                 nhPhone: '18003090309',
+                heroLocationPill: 'Dwarka, New Delhi',
+                heroBgImg: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1600&h=900&fit=crop&q=80',
+                heroMainImg: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700&h=500&fit=crop&q=80',
                 title: "Dr. Miglani's Dental Clinic | Narayana Health - Dwarka, New Delhi",
                 metaDesc: "Dr. Miglani's Dental Clinic at Narayana Health, Dwarka, New Delhi. Expert dental care including consultations, cosmetic dentistry, orthodontics, and more. Book now!",
                 heroDesc: 'Advanced dental treatments with a gentle touch. Located at Dwarka, New Delhi — trusted by hundreds of families for comprehensive oral care.',
@@ -3186,6 +3306,17 @@
                 }
             });
 
+            // Update hero images
+            const heroBg = document.getElementById('heroBgImg');
+            const heroMain = document.getElementById('heroMainImg');
+            if (heroBg) heroBg.src = data.heroBgImg;
+            if (heroMain) heroMain.src = data.heroMainImg;
+
+            // Update clinic thumbnail active state
+            document.querySelectorAll('.hero-clinic-thumb').forEach(thumb => {
+                thumb.classList.toggle('active', thumb.getAttribute('data-location') === loc);
+            });
+
             // Update map
             const mapIframe = document.getElementById('mapIframe');
             if (mapIframe) mapIframe.src = data.mapSrc;
@@ -3196,6 +3327,9 @@
             const dirKn = document.getElementById('directionsLinkKn');
             if (dirEn) dirEn.href = dirQuery;
             if (dirKn) dirKn.href = dirQuery;
+
+            // Re-init Lucide icons for location pill
+            lucide.createIcons();
 
             // Close dropdown
             document.getElementById('locationDropdown').classList.remove('open');
